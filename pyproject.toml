@@ -1,0 +1,28 @@
+[project]
+name = "x11-ocr"
+version = "0.1.0"
+description = "Drive the Linux desktop by OCR: RapidOCR element tree with pixel-true click coordinates, AT-SPI presses; works on Plasma Wayland and X11"
+readme = "README.md"
+license = "AGPL-3.0-or-later"
+requires-python = ">=3.10"
+dependencies = [
+    "rapidocr-onnxruntime>=1.4",
+    "pillow>=11",
+    "numpy>=2",
+]
+
+[project.urls]
+Homepage = "https://github.com/GlassOnTin/x11-ocr"
+Upstream = "https://github.com/GlassOnTin/glkvm-mcp"
+
+[project.scripts]
+x11-screen-elements = "x11_ocr.screen_elements:main"
+x11-click-text = "x11_ocr.click_text:main"
+x11-windows = "x11_ocr.windows:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["x11_ocr"]
